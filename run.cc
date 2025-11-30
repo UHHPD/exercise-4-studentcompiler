@@ -2,6 +2,7 @@
 #include <vector>
 #include <functional>
 #include <string>
+#include<cmath>
 
 #include "Data.hh"
 
@@ -74,6 +75,20 @@ int main() {
        << endl;
   cout << "measurement of experiment A in bin 27: " << datA.measurement(27)
        << endl;
+
+
+  std::vector<Data> experiments;
+  experiments.emplace_back("exp_A");
+  experiments.emplace_back("exp_B");
+  experiments.emplace_back("exp_C");
+  experiments.emplace_back("exp_D");
+
+  for (int i = 0; i < experiments.size(); ++i) {
+      std::cout << "Experiment " << i
+                << " cross section in bin 27 = "
+                << experiments[i].measurement(27)
+                << std::endl;
+  }
 
   return 0;
 }
